@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+}
+header {
+    height: 60px;
+    background-color: #fff;
+    margin: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    text-decoration: none;
+}
+header nav {
+    width: 38%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    text-transform: uppercase;
+    color: #555555;
+}
+nav a {
+    color: #7793c2;
+    font-size: 12px;
+}
+nav a:hover {
+    color: #dec75a;
+}
+.home {
+    height: 630px;
+    width: 100%;
+    background: no-repeat url(../img/home-bg.jpg);
+    background-color: rgba(0, 0, 25, 0.8);
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+.home h1 {
+    color: #fff;
+    font-size: 50px;
+    margin: 0;
+}
+.home p {
+    color: #aeba36;
+    font-size: 9px;
+    margin-bottom: 30px;
+}
+.home a {
+    text-decoration: none;
+    color: #684d56;
+    background-color: #fff;
+    padding: 17px 24px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: bold;
+}
+.articles {
+    margin: 7% 17%;
+}
+.articles .picture {
+    width: 100%;
+}
+.article {
+    margin: 7.5% 0;
+}
+.artical-text h2 {
+    font-size: 21px;
+    font-weight: bold;
+}
+.autor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.autor img {
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.artical-body {
+    color: #a3778d;
+    font-size: 11px;
+    line-height: 15px;
+    margin-bottom: 5%;
+}
+.artical-link {
+    text-decoration: none;
+    color: #684d56;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 9px;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    display: block;
+    width: 9%;
+}
+hr {
+    border: 1px solid #f0f0f0;
+}
+footer {
+    background-color: #000;
+}
+.footer {
+    margin: 0 17%;
+    padding: 5% 0;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.footer h3 {
+    font-size: 22px;
+}
+.footer div {
+    width: 40%;
+}
+.footer p, .footer span {
+    color: #776e68;
+    font-size: 12px;
+}
