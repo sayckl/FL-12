@@ -2,16 +2,10 @@
  * Feel free to change name of colors if you need it
  * Feel free to add new colors if you need it
  */
-:root {
-  --bg-color--dark: #0b192f;
-  --bg-color--header: #024161;
-  --link: #fff;
-  --link--hover: #1f52a4;
-  --bg-footer-color: #024161;
-}
-
 body {
   font-family: roboto;
+  margin: 0;
+  background-color: #0b192f;;
 }
 .post-1 {
 	background: #9d27b0;
@@ -30,3 +24,198 @@ body {
 }
 
 /* Your styles go here */
+h2 {
+  font-size: 20px;
+}
+.menu {
+  height: 40px;
+  margin: 20px 5px 0;
+  display: none;
+}
+.menu-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #024161;
+  border-radius: 50%;
+  position: relative;
+}
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  top: 50%; margin-top: -1px;
+  left: 50%; margin-left: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
+.menu-btn span::before,
+.menu-btn span::after {
+  content: '';
+  display: block;
+  transition: 0.5s;
+}
+.menu-btn span::before {
+  transform: translateY(-5px);
+}
+.menu-btn span::after {
+  transform: translateY(5px);
+}
+.menu-btn_active span {
+  height: 0;
+}
+.menu-btn_active span:before {
+  transform: rotate(45deg);
+}
+.menu-btn_active span:after {
+  transform: rotate(-45deg);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #024161;
+  height: 60px;
+}
+header a{
+  text-decoration: none;
+  color: #fff;
+}
+.logo {
+  margin: 2% 2%;
+  font-size: 25px;
+}
+.red {
+  color: #d12967;
+}
+nav {
+  margin: 2% 2%;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.body {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.post-0 {
+  margin: 2% 0;
+  background: url(../img/post0.jpg) no-repeat;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.post-0 h2 {
+  font-size: 40px;
+}
+.post-0 p {
+  font-size: 20px;
+  width: 60%;
+}
+.post-0 h2, .post-0 p {
+  opacity: 0.7;
+  margin: 2% 4%;
+}
+.blocks {
+  display: flex;
+}
+.post {
+  margin-right: 2%;
+  display: flex;
+}
+.post img {
+  width: 50%;
+}
+.post-5 {
+  margin-bottom: 4%;
+}
+.elements {
+  display: flex;
+}
+.text-section {
+  margin: 5%;
+  opacity: 0.7;
+}
+.text-section h2 {
+  font-size: 35px;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0.3;
+  margin: 1%;
+}
+.news {
+  margin-left: 2%;
+}
+.news-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+}
+.news-block .news-body{
+  background-color: #fff;
+  color: #000;
+  padding: 4%;
+}
+.news-block img {
+  width: 100%;
+}
+footer {
+  background-color: #024161;
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+}
+nav a:hover {
+  display: block;
+  padding: 2%;
+  background-color: #1f52a4;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.post img:hover,
+.post .text-section:hover {
+  opacity: 0.4;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .post {
+    flex-direction: column;
+  }
+  .post img {
+    width: 100%;
+  }
+  .news {
+    width: 50%;
+  }
+  .menu {
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+}
+@media screen and (max-width: 460px) {
+  .blocks {
+    flex-direction: column;
+  }
+  .post {
+    margin-left: 2%;
+  }
+  .news {
+    width: 95%;
+  }
+}
