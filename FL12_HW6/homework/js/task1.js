@@ -20,8 +20,8 @@ if ( !a.match(/\d/g) || !b.match(/\d/g) || !c.match(/\d/g) ) {
         console.log('No solution!');
     }
 } else if ( D === 0 ) {
-    var value1 = - ( b / ( 2 * a ));
-    var value2 = value1;
+    value1 = - ( b / ( 2 * a ));
+    value2 = value1;
     console.log('x1=' + value1);
     console.log("and x2=" + value2);
 }else{
