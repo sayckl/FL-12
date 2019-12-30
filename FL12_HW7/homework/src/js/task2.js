@@ -2,24 +2,30 @@
 
 let game = confirm('Do you want to play a game?');
 let repeatGame = true;
+let random = 8;
 let totalPrize = 0;
 let maxPrize = 100;
-let midlPrize = maxPrize / 2;
-let minPrize = maxPrize / 4;
+let midlPrize = 50;
+let minPrize = 25;
 let prize = maxPrize;
 let attempt;
+const firstTry = 3;
+const secondTry = 2;
+const lastTry = 1;
+const half = 2;
+const quarter = 4;
 let enterNumber;
 let randomNum; // = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
 
 if ( game === true ) {
     while(repeatGame){
-        for(attempt = 3; attempt > 0; attempt--) {
-            randomNum = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
-            if (attempt === 3) {
+        for(let attempt = 3; attempt > 0; attempt--) {
+            randomNum = Math.floor(Math.random() * (random - 0 + 1)) + 0;
+            if (attempt === firstTry) {
                 prize = maxPrize;
-            }else if (attempt === 2) {
+            }else if (attempt === secondTry) {
                 prize = midlPrize;
-            }else if (attempt === 1) {
+            }else if (attempt === lastTry) {
                 prize = minPrize
             }
             enterNumber = Number(prompt(`Choose a roulette pocket number from 0 to 8.` +
@@ -28,15 +34,15 @@ if ( game === true ) {
             `\n\rPossible prize on current attempt: ${prize}$`, ''));
             if(enterNumber === randomNum){
                 switch (attempt) {
-                    case 3:
+                    case firstTry:
                         totalPrize += maxPrize;
                         attempt = 0;
                         break;
-                    case 2:
+                    case secondTry:
                         totalPrize += midlPrize;
                         attempt = 0;
                         break;
-                    case 1:
+                    case lastTry:
                         prize = minPrize;
                         break;
                     default:
@@ -47,13 +53,14 @@ if ( game === true ) {
             }
         }
             if(repeatGame === true){
-                repeatGame = confirm(`Congratulation, you won! Your prize is: ${totalPrize} $. Do you want to continue?`);
+                repeatGame = confirm(`Congratulation, you won! Your prize is: ${totalPrize} $. 
+                Do you want to continue?`);
                 if(repeatGame){
-                    maxPrize *= 2;
-                    midlPrize = maxPrize / 2;
-                    minPrize = maxPrize / 4;
-                    attempt = 3;
-                    randomNum += 4;
+                    maxPrize *= half;
+                    midlPrize = maxPrize / half;
+                    minPrize = maxPrize / quarter;
+                    attempt = firstTry;
+                    randomNum += quarter;
                 } else {
                     alert(`Thank you for your participation. Your prize is: ${totalPrize} $`);
                     break;
