@@ -15,24 +15,37 @@ if ( game === true ) {
     while(repeatGame){
         for(attempt = 3; attempt > 0; attempt--) {
             randomNum = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
-            enterNumber = prompt(`Choose a roulette pocket number from 0 to 8.` +
+            if (attempt === 3) {
+                prize = maxPrize;
+            }else if (attempt === 2) {
+                prize = midlPrize;
+            }else if (attempt === 1) {
+                prize = minPrize
+            }
+            enterNumber = Number(prompt(`Choose a roulette pocket number from 0 to 8.` +
             `\n\rAttempts left: ${attempt}` +
             `\n\rTotal prize: ${totalPrize}$` +
-            `\n\rPossible prize on current attempt: ${prize}$`, '');
+            `\n\rPossible prize on current attempt: ${prize}$`, ''));
             if(enterNumber === randomNum){
-				if(attempt === 3){
-					totalPrize += maxPrize;
-                    attempt = 0;
-				} else if(attempt === 2){
-					totalPrize += midlPrize;
-                    attempt = 0;
-				} else if(attempt === 1){
-                    totalPrize += minPrize;
-				}
-				repeatGame = true;
+                switch (attempt) {
+                    case 3:
+                        totalPrize += maxPrize;
+                        attempt = 0;
+                        break;
+                    case 2:
+                        totalPrize += midlPrize;
+                        attempt = 0;
+                        break;
+                    case 1:
+                        prize = minPrize;
+                        break;
+                    default:
+                        repeatGame = true;
+                }
 			} else {
 				repeatGame = false;
             }
+        }
             if(repeatGame === true){
                 repeatGame = confirm(`Congratulation, you won! Your prize is: ${totalPrize} $. Do you want to continue?`);
                 if(repeatGame){
@@ -47,19 +60,16 @@ if ( game === true ) {
                 }
             } else {
                 alert(`Thank you for your participation. Your prize is: ${totalPrize} $`);
-                game = confirm('Do you want to play a game?')
+                repeatGame = confirm('Do you want to play a game?');
                 if(repeatGame){
                     attempt = 0;
-                    maxPrize = 100;
-                    midlPrize = maxPrize / 2;
-                    minPrize = maxPrize / 4;
                     totalPrize = 0;
                 } else {
+                    alert('You did not become a billionaire, but can.');
                     break;
                 }
             }
     }
-}
     }else{
         alert('You did not become a billionaire, but can.');
 }
