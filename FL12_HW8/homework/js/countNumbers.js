@@ -7,3 +7,5 @@ function countNumbers(args) {
       }, {});
       return b;
 }
+
+countNumbers();

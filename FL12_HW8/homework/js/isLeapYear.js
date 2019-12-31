@@ -10,3 +10,4 @@ function isLeapYear(data) {
         console.log(year + ' is not a leap year');
     }
 }
+isLeapYear();

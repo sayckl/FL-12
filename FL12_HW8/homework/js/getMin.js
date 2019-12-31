@@ -7,4 +7,5 @@ function getMin (...args) {
         }
         return min;
     }
-    
+
+getMin();
