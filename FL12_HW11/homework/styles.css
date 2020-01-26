@@ -1,1 +1,33 @@
 /* Todo: your styles go here*/
+body {
+    font-size: 20px;
+}
+p {
+    height: 25px;
+    margin: 0;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+}
+i {
+    color: #edbc0b;
+    vertical-align: text-bottom;
+}
+.folder:hover,
+.moviFile:hover {
+    background-color: #efefef;
+}
+
+.moviFile i {
+    color: #bbbbbb;
+}
+.empty {
+    font-style: italic;
+}
+.listItem {
+    display: none;
+}
+.open {
+    display: block;
+}
